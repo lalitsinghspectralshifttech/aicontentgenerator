@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useNavigate } from 'react-router-dom';
 type BrandInfo = {
   name: string;
   industry: string;
@@ -119,6 +119,7 @@ const socialIcons: Record<
 
 const MyBrands: React.FC = () => {
   const [selected, setSelected] = useState(0);
+  const navigate = useNavigate();
   const brand = brands[selected];
 
   return (
@@ -128,7 +129,8 @@ const MyBrands: React.FC = () => {
         {/* Top Bar */}
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-bold text-gray-900">My Brands</h1>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-semibold shadow">
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-semibold shadow"
+            onClick={() => navigate('/CreateBrandForm')}>
             + Add New Brand
           </button>
         </div>
@@ -140,8 +142,8 @@ const MyBrands: React.FC = () => {
               key={b.name}
               onClick={() => setSelected(idx)}
               className={`flex items-center gap-2 px-4 py-2 rounded-md border text-sm font-medium ${selected === idx
-                  ? "bg-white border-blue-400 text-blue-700 shadow-sm"
-                  : "bg-white border-gray-300 text-gray-700 hover:bg-blue-50"
+                ? "bg-white border-blue-400 text-blue-700 shadow-sm"
+                : "bg-white border-gray-300 text-gray-700 hover:bg-blue-50"
                 }`}
             >
               <img src={b.logoUrl} className="w-6 h-6 rounded" alt={b.name} />

@@ -48,6 +48,7 @@ import ContentType from "./components/Main/ContentGenerator/ContentType";
 import CTPlatforms from "./components/Main/ContentGenerator/CTPlatforms";
 import Details from "./components/Main/ContentGenerator/Details";
 import Results from "./components/Main/ContentGenerator/Results";
+import CreateBrandForm from "./components/Main/CreateBrandForm"
 
 
 // Layout
@@ -104,6 +105,7 @@ const App = () => {
           <Route path="/ctplatforms" element={<CTPlatforms />} />
           <Route path="/details" element={<Details />} />
           <Route path="/results" element={<Results />} />
+            <Route path="/createbrandform" element={<CreateBrandForm />} />
 
 
         </Route>
