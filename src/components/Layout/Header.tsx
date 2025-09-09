@@ -125,11 +125,11 @@ const Header: React.FC = () => {
 
                 {/* CTA */}
                 <div className="gap-4 hidden md:flex">
-                    <button className="bg-[#00ADB5] text-white px-5 py-2 rounded-lg hover:bg-teal-600 transition"
+                    <button className="bg-[#00ADB5] text-white px-5 py-2 rounded-lg hover:bg-[#009da5] transition"
                         onClick={() => go("/Login")}>
                         Login
                     </button>
-                    <button className="bg-[#00ADB5] text-white px-5 py-2 rounded-lg hover:bg-teal-600 transition"
+                    <button className="bg-[#00ADB5] text-white px-5 py-2 rounded-lg hover:bg-[#009da5] transition"
                         onClick={() => go("/Register")}>
                         Sign up free
                     </button>

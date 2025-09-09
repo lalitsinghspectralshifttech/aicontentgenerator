@@ -63,7 +63,7 @@ const Footer = () => {
                 </div>
                 <hr className="my-10 border-gray-700" />
                 <div className="flex flex-col sm:flex-row justify-between items-center text-sm">
-                    <p className="mb-4 sm:mb-0">© 2025 SocialForge. All rights reserved.</p>
+                    <p className="mb-4 sm:mb-0">© 2025 AI Content Generator. All rights reserved.</p>
                     <div className="flex space-x-4">
                         <a href="#" className="hover:text-white">Privacy Policy</a>
                         <a href="#" className="hover:text-white">Terms of Service</a>

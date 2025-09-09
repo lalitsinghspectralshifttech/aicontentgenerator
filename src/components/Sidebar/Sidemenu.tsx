@@ -227,7 +227,7 @@ const SideMenu: React.FC = () => {
         </nav>
 
         {/* Support Menu */}
-        <h3 className="uppercase text-xs font-bold text-gray-400 mt-8 mb-4">Support</h3>
+        <h3 className="uppercase text-xs font-bold text-gray-400 mt-6 mb-4">Support</h3>
         <nav className="space-y-2">
           {supportMenuItems.map((item) => (
             <NavLink
@@ -246,19 +246,20 @@ const SideMenu: React.FC = () => {
             </NavLink>
           ))}
         </nav>
+        <div className=" pt-4 border-t mt-2">
+          <NavLink
+            to="/logout"
+            className="flex items-center space-x-3 text-slate-800 hover:bg-slate-200 rounded-md transition duration-200"
+          >
+            <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+              <path d="M16 9v-4l-12 12h11v4l5-5-5-5z" />
+            </svg>
+            <span className="font-medium">Log out</span>
+          </NavLink>
+        </div>
       </div>
 
-      <div className="mt-auto pt-6 border-t">
-        <NavLink
-          to="/logout"
-          className="flex items-center space-x-3 p-3 text-slate-800 hover:bg-slate-200 rounded-md transition duration-200"
-        >
-          <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-            <path d="M16 9v-4l-12 12h11v4l5-5-5-5z" />
-          </svg>
-          <span className="font-medium">Log out</span>
-        </NavLink>
-      </div>
+
     </div>
   );
 };

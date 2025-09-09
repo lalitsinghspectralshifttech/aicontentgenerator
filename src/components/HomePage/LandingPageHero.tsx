@@ -27,7 +27,7 @@ const HeroSection: React.FC = () => {
 
       {/* CTA Buttons */}
       <div className="flex justify-center gap-4 mb-6">
-        <button className="px-6 py-3 rounded-xl bg-[#00ADB5] text-white font-medium hover:bg-blue-700 transition">
+        <button className="px-6 py-3 rounded-xl bg-[#00ADB5] text-white font-medium hover:bg-[#009da5] transition">
           Start Creating Free →
         </button>
         <button className="px-6 py-3 rounded-xl border border-gray-300 font-medium hover:bg-gray-100 transition">

@@ -67,7 +67,8 @@ const HomePage = () => (
     <Industies />
     <FeaturesSection />
     <TestimonialCarousel />
-    <Price />
+    {/* <Price /> */}
+    <UpgradePlan />
     <BannerSection />
     <FAQSection />
   </>
