@@ -298,7 +298,7 @@ export default function UpgradePlan() {
 
             {/* Button */}
             {plan.buttonVariant === "primary" && (
-              <button className="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 rounded-lg mb-5 transition">
+              <button className="w-full bg-[#00ADB5] hover:bg-[#009da5] text-white font-bold py-2 rounded-lg mb-5 transition">
                 {plan.button}
               </button>
             )}
@@ -369,7 +369,7 @@ export default function UpgradePlan() {
           needs. Contact us for a personalized consultation and custom pricing
           options.
         </div>
-        <button className="bg-teal-500 hover:bg-teal-600 text-white px-6 py-2 font-semibold rounded-lg transition">
+        <button className="bg-[#00ADB5] hover:bg-[#009da5] text-white px-6 py-2 font-semibold rounded-lg transition">
           Contact Our Sales Team
         </button>
       </div>

@@ -91,7 +91,7 @@ const FAQSection = () => {
 
       <div className="text-center mt-12">
         <p className="text-lg text-gray-600 mb-6">Still have questions about our pricing?</p>
-        <button className="inline-flex items-center space-x-2 bg-[#00ADB5] text-white px-8 py-4 rounded-full font-medium shadow-lg hover:bg-blue-700 transition duration-300">
+        <button className="inline-flex items-center space-x-2 bg-[#00ADB5] text-white px-8 py-4 rounded-full font-medium shadow-lg hover:bg-[#009da5] transition duration-300">
           <span>Contact Our Sales Team</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
