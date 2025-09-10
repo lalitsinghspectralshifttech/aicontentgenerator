@@ -793,6 +793,120 @@ export default GeminiTextGenerator;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState } from "react";
+
+// const API_KEY = "AIzaSyC_A0_Mu6EZIX25F5SAz4gkdAgYdo7aFT8Y"; // ⚠️ apna Gemini API key yaha paste karein
+
+// const GeminiImageGenerator: React.FC = () => {
+//   const [prompt, setPrompt] = useState("");
+//   const [loading, setLoading] = useState(false);
+//   const [imageUrl, setImageUrl] = useState<string | null>(null);
+//   const [error, setError] = useState<string | null>(null);
+
+//   const handleGenerate = async () => {
+//     if (!prompt) {
+//       setError("⚠️ Please enter a prompt!");
+//       return;
+//     }
+
+//     setError(null);
+//     setLoading(true);
+//     setImageUrl(null);
+
+//     try {
+//       const res = await fetch(
+//         `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image-preview:generateContent?key=${API_KEY}`,
+//         {
+//           method: "POST",
+//           headers: { "Content-Type": "application/json" },
+//           body: JSON.stringify({
+//             contents: [{ parts: [{ text: prompt }], role: "user" }],
+//             generationConfig: { responseModalities: ["IMAGE"] },
+//           }),
+//         }
+//       );
+
+//       const data = await res.json();
+
+//       if (data.error) {
+//         throw new Error(data.error.message);
+//       }
+
+//       // image base64 string extract karna
+//       const imageBase64 =
+//         data?.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+
+//       if (imageBase64) {
+//         setImageUrl(`data:image/png;base64,${imageBase64}`);
+//       } else {
+//         throw new Error("No image generated.");
+//       }
+//     } catch (err: any) {
+//       setError(err.message || "Something went wrong!");
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   return (
+//     <div className="p-6 max-w-2xl mx-auto">
+//       <h1 className="text-2xl font-bold mb-4">Gemini Image Generator</h1>
+
+//       <textarea
+//         className="w-full border rounded-lg p-2 mb-3"
+//         rows={4}
+//         placeholder="Enter your image prompt..."
+//         value={prompt}
+//         onChange={(e) => setPrompt(e.target.value)}
+//       />
+
+//       <button
+//         onClick={handleGenerate}
+//         disabled={loading}
+//         className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 disabled:opacity-50"
+//       >
+//         {loading ? "Generating..." : "Generate Image"}
+//       </button>
+
+//       {error && <p className="text-red-600 mt-3">{error}</p>}
+
+//       {imageUrl && (
+//         <div className="mt-6">
+//           <img
+//             src={imageUrl}
+//             alt="Generated"
+//             className="rounded-lg shadow-md border"
+//           />
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default GeminiImageGenerator;
+
+
 // import React, { useState } from 'react';
 // import { GoogleGenerativeAI } from '@google/generative-ai';
 

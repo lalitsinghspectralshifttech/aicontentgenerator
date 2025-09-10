@@ -34,10 +34,9 @@ import GetInTouch from "./components/Contact/GetInTouch";
 import VisitOurOffice from "./components/Contact/VisitOurOffice";
 import Dashboard from "./components/Dashboard/Dashboard";
 import DashboardLayout from "./components/Dashboard/DashboardLayout";
-import BrandProfile from "./components/Main/BrandProfile";
-import MyProducts from "./components/Main/MyProducts";
-import MyContent from "./components/Main/MyContent";
-import SocialChannels from "./components/Main/Socialchannels";
+import BrandProfile from "./components/Main/mybrands/BrandProfile";
+import MyProducts from "./components/Main/myproducts/MyProducts";
+import MyContent from "./components/Main/mycontent/MyContent";
 import ApiKeys from "./components/Main/APIKeys";
 import HelpSupportPage from "./components/Main/HelpSupportPage";
 import Settings from "./components/Support/Settings";
@@ -48,9 +47,12 @@ import ContentType from "./components/Main/ContentGenerator/ContentType";
 import CTPlatforms from "./components/Main/ContentGenerator/CTPlatforms";
 import Details from "./components/Main/ContentGenerator/Details";
 import Results from "./components/Main/ContentGenerator/Results";
-import CreateBrandForm from "./components/Main/CreateBrandForm"
-
-
+import CreateBrandForm from "./components/Main/mybrands/CreateBrandForm"
+import EditBrands from "./components/Main/mybrands/EditBrands";
+import AddProducts from "./components/Main/myproducts/AddProducts";
+import EditProduct from "./components/Main/myproducts/EditProduct";
+import SocialChannels from "./components/Main/socialchannels/SocialChannels";
+// import FacebookModel from "./components/Main/socialchannels/FacebookModel";
 // Layout
 import Layout from './components/Layout/Layout';
 
@@ -105,7 +107,11 @@ const App = () => {
           <Route path="/ctplatforms" element={<CTPlatforms />} />
           <Route path="/details" element={<Details />} />
           <Route path="/results" element={<Results />} />
-            <Route path="/createbrandform" element={<CreateBrandForm />} />
+          <Route path="/createbrandform" element={<CreateBrandForm />} />
+          <Route path="/editbrands" element={<EditBrands />} />
+          {/* <Route path="/facebookmodel" element={<FacebookModel />} /> */}
+          <Route path="/addproducts" element={<AddProducts />} />
+          <Route path="/edit-product/:id" element={<EditProduct />} />
 
 
         </Route>

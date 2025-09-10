@@ -170,7 +170,8 @@ const MyBrands: React.FC = () => {
               </div>
             </div>
             <div className="flex gap-2">
-              <button className="border border-gray-300 bg-white hover:bg-gray-100 px-4 py-2 text-sm font-medium rounded shadow-sm">
+              <button className="border border-gray-300 bg-white hover:bg-gray-100 px-4 py-2 text-sm font-medium rounded shadow-sm"
+                onClick={() => navigate('/EditBrands')}>
                 Edit
               </button>
               <button className="border border-red-200 bg-red-100 hover:bg-red-200 text-red-700 px-4 py-2 text-sm font-medium rounded shadow-sm">

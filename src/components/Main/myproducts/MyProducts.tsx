@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 interface Product {
   id: number;
   name: string;
@@ -47,6 +47,8 @@ const initialProducts: Product[] = [
 ];
 
 const ProductDashboard: React.FC = () => {
+  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [products, setProducts] = useState<Product[]>(initialProducts);
   const [brandFilter, setBrandFilter] = useState<string>("All Brands");
   const [search, setSearch] = useState<string>("");
@@ -63,7 +65,7 @@ const ProductDashboard: React.FC = () => {
 
   return (
     // <div className="max-w-4xl mx-auto p-6 bg-gray-50 min-h-screen">
-   <div className="bg-[#f7f8fa] min-h-screen px-4 md:px-32 lg:px-20 py-8"> 
+    <div className="bg-[#f7f8fa] min-h-screen px-4 md:px-32 lg:px-20 py-8">
       <h2 className="text-lg font-semibold mb-4">My Products</h2>
 
       <div className="flex items-center gap-4 mb-6">
@@ -85,7 +87,8 @@ const ProductDashboard: React.FC = () => {
           ))}
         </select>
 
-        <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          onClick={() => navigate('/AddProducts')}>
           + Add Product
         </button>
       </div>
@@ -111,7 +114,9 @@ const ProductDashboard: React.FC = () => {
                 </div>
               </div>
               <div className="flex gap-2">
-                <button className="text-blue-600 hover:text-blue-900 focus:outline-none">
+                <button className="text-blue-600 hover:text-blue-900 focus:outline-none"
+                  onClick={() => navigate(`/edit-product/${p.id}`)}>
+
                   &#9998;
                 </button>
                 <button

@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 const CreateBrandForm: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-6">
       <div className="w-full max-w-4xl bg-white rounded-xl shadow-md p-6">
@@ -8,10 +10,12 @@ const CreateBrandForm: React.FC = () => {
         <div className="flex items-center justify-between border-b pb-3 mb-4">
           <h2 className="text-xl font-semibold">My Brands</h2>
           <div className="space-x-2">
-            <button className="px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+            <button className="px-4 py-2 text-sm bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+              onClick={() => navigate('/BrandProfile')}>
               Save
             </button>
-            <button className="px-4 py-2 text-sm bg-gray-200 rounded-lg hover:bg-gray-300">
+            <button className="px-4 py-2 text-sm bg-gray-200 rounded-lg hover:bg-gray-300"
+              onClick={() => navigate('/BrandProfile')}>
               Cancel
             </button>
           </div>
