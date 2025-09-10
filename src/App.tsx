@@ -57,7 +57,6 @@ import SocialChannels from "./components/Main/socialchannels/SocialChannels";
 import Layout from './components/Layout/Layout';
 
 // Extra route example
-// import SideMenu from './components/Sidebar/Sidemenu';
 
 // Home page content
 const HomePage = () => (
