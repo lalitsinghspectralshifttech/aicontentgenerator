@@ -7,8 +7,8 @@ const Footer = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-4 gap-36">
                     <div>
                         <div className="flex items-center mb-4">
-                            <div className="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center mr-2">
-                                <span className="text-white font-bold">SF</span>
+                            <div className="w-12 h-10 bg-blue-800 rounded-full flex items-center justify-center mr-2">
+                                <span className="text-white font-bold">UST</span>
                             </div>
                             <span className="text-white text-xl font-semibold">AI Content Generator</span>
                         </div>

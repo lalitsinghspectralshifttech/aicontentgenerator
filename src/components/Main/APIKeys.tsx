@@ -811,4 +811,87 @@ export default GeminiTextGenerator;
 
 
 
+// import React, { useState } from "react";
 
+// const API_KEY = "AIzaSyC_A0_Mu6EZIX25F5SAz4gkdAgYdo7aFT8";
+
+// const ImageGenerator: React.FC = () => {
+//   const [prompt, setPrompt] = useState("");
+//   const [imageBase64, setImageBase64] = useState<string | null>(null);
+//   const [loading, setLoading] = useState(false);
+
+//   const generateImage = async () => {
+//     if (!prompt) return;
+//     setLoading(true);
+//     setImageBase64(null);
+
+//     try {
+//       const response = await fetch(
+//         `https://generativelanguage.googleapis.com/v1beta/models/imagegeneration:generate?key=${API_KEY}`,
+//         {
+//           method: "POST",
+//           headers: {
+//             "Content-Type": "application/json",
+//           },
+//           body: JSON.stringify({
+//             prompt, // user input se image generate hogi
+//             size: "1024x1024",
+//           }),
+//         }
+//       );
+
+//       const data = await response.json();
+//       console.log("API Response:", data);
+
+//       // API response format check
+//       const base64 =
+//         data?.candidates?.[0]?.content?.parts?.[0]?.inline_data?.data;
+
+//       if (base64) {
+//         setImageBase64(base64);
+//       } else {
+//         console.error("Invalid API response:", data);
+//         alert("Image generate नहीं हो पाई!");
+//       }
+//     } catch (error) {
+//       console.error("Error generating image:", error);
+//       alert("कुछ error आया है!");
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   return (
+//     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-6">
+//       <h1 className="text-2xl font-bold mb-4">AI Image Generator</h1>
+
+//       <textarea
+//         className="w-full max-w-lg p-3 border rounded-lg mb-4 focus:ring-2 focus:ring-blue-500"
+//         rows={3}
+//         placeholder="Enter your prompt here..."
+//         value={prompt}
+//         onChange={(e) => setPrompt(e.target.value)}
+//       />
+
+//       <button
+//         onClick={generateImage}
+//         disabled={loading}
+//         className="px-6 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 disabled:opacity-50"
+//       >
+//         {loading ? "Generating..." : "Generate Image"}
+//       </button>
+
+//       {imageBase64 && (
+//         <div className="mt-6">
+//           <img
+//             src={`data:image/png;base64,${imageBase64}`}
+//             alt="Generated"
+//             className="rounded-xl shadow-lg max-w-md"
+//           />
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default ImageGenerator;
