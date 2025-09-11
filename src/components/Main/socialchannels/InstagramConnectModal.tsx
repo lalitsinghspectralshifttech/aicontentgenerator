@@ -1,6 +1,3 @@
-// src/components/InstagramConnectModal.tsx
-
-import React from 'react';
 import { FaInstagram } from 'react-icons/fa';
 import { IoClose } from 'react-icons/io5';
 

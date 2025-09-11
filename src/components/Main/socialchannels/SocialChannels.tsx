@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import InstagramConnectModal from "./InstagramConnectModal";
 import FacebookModel from "./FacebookModel";
+import TwitterConnectModal from "./TwitterConnectModal";
+import LinkedInConnectModal from "./LinkedInConnectModal";
+
+
+
 
 interface ChannelInfo {
     name: string;
@@ -90,19 +95,41 @@ const channels: ChannelInfo[] = [
 const SocialChannels: React.FC = () => {
     const [isInstagramModalOpen, setIsInstagramModalOpen] = useState(false);
     const [isFacebookModalOpen, setIsFacebookModalOpen] = useState(false);
+    const [isTwitterModalOpen, setIsTwitterModalOpen] = useState(false);
+    const [isLinkedInModalOpen, setIsLinkedInModalOpen] = useState(false);
 
     const openInstagramModal = () => setIsInstagramModalOpen(true);
     const closeInstagramModal = () => setIsInstagramModalOpen(false);
     const openFacebookModal = () => setIsFacebookModalOpen(true);
     const closeFacebookModal = () => setIsFacebookModalOpen(false);
+    const openTwitterModal = () => setIsTwitterModalOpen(true);
+    const closeTwitterModal = () => setIsTwitterModalOpen(false);
+    const openLinkedInModal = () => setIsLinkedInModalOpen(true);
+    const closeLinkedInModal = () => setIsLinkedInModalOpen(false);
+
+
+    // const handleConnectClick = (channelName: string) => {
+    //     if (channelName === "Instagram") {
+    //         openInstagramModal();
+    //     } else if (channelName === "Facebook") {
+    //         openFacebookModal();
+    //     }
+    // };
 
     const handleConnectClick = (channelName: string) => {
         if (channelName === "Instagram") {
             openInstagramModal();
         } else if (channelName === "Facebook") {
             openFacebookModal();
+        } else if (channelName === "Twitter") {
+            openTwitterModal();
+        } else if (channelName === "LinkedIn") {
+            openLinkedInModal();
         }
     };
+
+
+
 
     return (
         <div className="max-w-5xl mx-auto py-8 px-4 bg-gray-50 min-h-screen">
@@ -175,6 +202,10 @@ const SocialChannels: React.FC = () => {
             </div>
             <InstagramConnectModal isOpen={isInstagramModalOpen} onClose={closeInstagramModal} />
             <FacebookModel isOpen={isFacebookModalOpen} onClose={closeFacebookModal} />
+            <TwitterConnectModal isOpen={isTwitterModalOpen} onClose={closeTwitterModal} />
+            <LinkedInConnectModal isOpen={isLinkedInModalOpen} onClose={closeLinkedInModal} />
+
+
         </div>
     );
 };

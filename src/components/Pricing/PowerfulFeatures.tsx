@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBullseye, FaChartLine, FaClipboard, FaLightbulb, FaPalette, FaVideo } from 'react-icons/fa';
+// import { FaBullseye, FaChartLine, FaClipboard, FaLightbulb, FaPalette, FaVideo } from 'react-icons/fa';
 
 const PowerfulFeatures = () => {
   const features = [
