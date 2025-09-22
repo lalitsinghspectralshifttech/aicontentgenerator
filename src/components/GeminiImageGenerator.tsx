@@ -7,38 +7,37 @@ const GeminiImageGenerator: React.FC = () => {
   const [error, setError] = useState("");
   const [model, setModel] = useState("imagen-3.0-generate-001");
 
- const handleGenerate = async () => {
-  if (!prompt.trim()) {
-    setError("⚠️ Please enter a prompt!");
-    return;
-  }
-
-  setError("");
-  setLoading(true);
-  setImageDataUrl(null);
-
-  try {
-    const response = await fetch("http://localhost:8000/generate", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ prompt }),
-    });
-
-    const data = await response.json();
-    console.log("Backend response:", data);
-
-    if (data.base64) {
-      // Convert base64 string to image URL for <img>
-      setImageDataUrl(`data:image/png;base64,${data.base64}`);
-    } else {
-      setError(data.error || "⚠️ No image data received.");
+  const handleGenerate = async () => {
+    if (!prompt.trim()) {
+      setError("⚠️ Please enter a prompt!");
+      return;
     }
-  } catch (err: any) {
-    setError("Error: " + (err.message || "Something went wrong!"));
-  } finally {
-    setLoading(false);
-  }
-};
+
+    setError("");
+    setLoading(true);
+    setImageDataUrl(null);
+
+    try {
+      const response = await fetch("http://localhost:8000/generate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt }),
+      });
+
+      const data = await response.json();
+      console.log("Backend response:", data);
+
+      if (data.base64) {
+        setImageDataUrl(`data:image/png;base64,${data.base64}`);
+      } else {
+        setError(data.error || "⚠️ No image data received.");
+      }
+    } catch (err: any) {
+      setError("Error: " + (err.message || "Something went wrong!"));
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="p-6 max-w-2xl mx-auto">
@@ -67,12 +66,24 @@ const GeminiImageGenerator: React.FC = () => {
       <button
         onClick={handleGenerate}
         disabled={loading}
-        className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50"
+        className="bg-blue-600 text-white ml-3 px-4 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50"
       >
         {loading ? "Generating..." : "Generate Image"}
       </button>
 
       {error && <p className="text-red-600 mt-3">{error}</p>}
+
+      {/* Loading Spinner */}
+      {loading && (
+        <div className="flex justify-center mt-6">
+          <div
+            className="h-12 w-12 animate-spin rounded-full border-4 border-solid border-blue-600 border-r-transparent"
+            role="status"
+          >
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>
+      )}
 
       {imageDataUrl && (
         <div className="mt-6">
