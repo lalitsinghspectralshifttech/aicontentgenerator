@@ -37,7 +37,7 @@ import DashboardLayout from "./components/Dashboard/DashboardLayout";
 import BrandProfile from "./components/Main/mybrands/BrandProfile";
 import MyProducts from "./components/Main/myproducts/MyProducts";
 import MyContent from "./components/Main/mycontent/MyContent";
-import ApiKeys from "./components/Main/APIKeys";
+import GeminiImageGenerator from "./components/GeminiImageGenerator";
 import HelpSupportPage from "./components/Main/HelpSupportPage";
 import Settings from "./components/Support/Settings";
 import UpgradePlan from "./components/Support/UpgradePlan";
@@ -53,6 +53,7 @@ import AddProducts from "./components/Main/myproducts/AddProducts";
 import EditProduct from "./components/Main/myproducts/EditProduct";
 import SocialChannels from "./components/Main/socialchannels/SocialChannels";
 // import FacebookModel from "./components/Main/socialchannels/FacebookModel";
+import BenefitsCarouselModal from "./components/Main/mycontent/BenefitsCarouselModal"
 // Layout
 import Layout from './components/Layout/Layout';
 
@@ -97,7 +98,7 @@ const App = () => {
           <Route path="mycontent" element={<MyContent />} />
           <Route path="socialchannels" element={<SocialChannels />} />
           <Route path="settings" element={<Settings />} />
-          <Route path="apikeys" element={<ApiKeys />} />
+          <Route path="GeminiImageGenerator" element={<GeminiImageGenerator />} />
           <Route path="helpsupportpage" element={<HelpSupportPage />} />
           <Route path="upgradeplan" element={<UpgradePlan />} />
           <Route path="Brands" element={<Brands />} />
@@ -108,7 +109,7 @@ const App = () => {
           <Route path="/results" element={<Results />} />
           <Route path="/createbrandform" element={<CreateBrandForm />} />
           <Route path="/editbrands" element={<EditBrands />} />
-          {/* <Route path="/facebookmodel" element={<FacebookModel />} /> */}
+          <Route path="/BenefitsCarouselModal" element={<BenefitsCarouselModal />} />
           <Route path="/addproducts" element={<AddProducts />} />
           <Route path="/edit-product/:id" element={<EditProduct />} />
 
